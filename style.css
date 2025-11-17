@@ -1,0 +1,81 @@
+body {
+	font-size: 22px;
+	color: black;
+	font-family: "Ariel", sans-serif;
+}
+
+header, main {
+	padding-left: 30px;
+}
+
+a{
+	color: black;
+	text-decoration: none;
+}
+
+a:hover{
+	color: red;
+}
+
+.bottom-border{
+	padding-bottom: 25px;
+}
+
+.table2{
+	text-align: center;
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.table2-th{
+	text-align: center;
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.table2-td{
+	text-align: center;
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.table2-tr{
+	text-align: center;
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+
+.td-no-border{
+	border: none;
+	padding-right: 20px;
+}
+
+.tr-no-border{
+	border: none;
+}
+
+
+nav{
+	padding-bottom: 50px;
+	border: none;
+}
+
+.table1{
+	border: none;
+}
+
+footer {
+	padding: 30px;
+	background-color: black;
+	color: white;
+	padding-left: 50px;
+}
