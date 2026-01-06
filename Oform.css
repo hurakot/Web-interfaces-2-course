@@ -1,0 +1,541 @@
+body {
+	font-size: 20px;
+	color: black;
+	font-family: "Ariel", sans-serif;
+}
+
+
+header, main {
+	padding-left: 30px;
+}
+
+
+a{
+	color: black;
+	text-decoration: none;
+}
+
+a:hover{
+	color: tomato;
+}
+
+img {
+	border-radius: 35px;
+	width: 100%;
+	height: auto;
+	border: 1px solid black;
+	object-fit: cover;
+  display: block;
+}
+
+button{
+	background-color: #f1eee9;
+	margin-top: 10px;
+	padding: 10px 30px 10px 30px;
+	border-radius: 10px;
+	cursor: pointer;
+	verticle-align: center;
+}
+
+nav{
+	border: none;
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 15px;
+}
+
+footer{
+	padding: 30px;
+	background-color: black;
+	color: white;
+	padding-left: 50px;
+	margin-top: 30px;
+}
+
+select{
+	width: 300px;
+	padding: 10px;
+}
+
+textarea{
+	font-family: "Ariel", sans-serif;
+	font-size: 14px;
+}
+
+#active {
+	color: tomato;
+}
+
+/*
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Фильтрация блюд в таблице по их типу (мясной, рыбный, вегетарианский и т.д.)
+*/
+
+/*
+Блок с фильтрами
+*/
+.filter{
+	border: none;
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 15px;
+}
+
+/*
+Элемент из блока с фильтрами
+*/
+.objectfilter {
+    border: 0px solid black;
+	background-color: white;
+	color: green;
+	margin: 10px;
+}
+/*
+Указывание на элемент из блока с фильтрами
+*/
+.objectfilter:hover {
+	background-color: rgb(118, 201, 118);
+}
+/*
+Если элемент из блока с фильтрами активен
+*/
+.objectfilter.active {
+    border: 0px solid black;
+	background-color: white;
+	color: green;
+	margin: 10px;
+	background-color: lightgreen;
+}
+
+/*
+Указывание на активированный элемент из блока с фильтрами
+*/
+.objectfilter.active:hover {
+    background-color: rgb(118, 201, 118);
+}
+
+/*
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Блок с иконками
+*/
+
+/*
+Заголовок блока иконок
+*/
+.iconTitle{
+	text-align: center;
+	font-style: bold;
+}
+
+/*
+Блок с иконками.
+Находится выше секции выбора блюд в заказ, в котором вы выбираете определённое блюдо (какой суп/десерт/напиток взять)
+*/
+.iconBlock{
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: 1fr;
+	gap: 10px;
+	justify-items: stretch;
+  	align-items: stretch;
+}
+
+/*
+Находится в блоке иконок
+Ряд иконок, который хранит в себе элементы с иконками и текстом-пояснялкой к ним. 
+*/
+.iconRow{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 10px;
+}
+
+/*
+Сам элемент иконок, который находится в ряду иконок. 
+Содержит в себе картинка-иконку и текст
+*/
+.iconElement{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/*
+Сами картинки иконок, которые находятся в блоке иконок
+*/
+.iconDishImage {
+	width: 60px;
+	height: 60px;
+	border: 0px solid black;
+	margin: 0;
+  	padding: 0;
+}
+
+/*
+Изменение картинки в элементе иконки при наведении на него курсора.
+*/
+.iconDishImage:hover{
+	transform: scale(1.2);
+}
+
+/*
+Текст под иконками в блоке иконок
+*/
+.iconDishText {
+	font-size: 16px;
+}
+
+/*
+В блоке иконок
+Подсказка около иконки десерта, поясняющая, что её можно добавлять к любому заказу
+*/
+.hint {
+	font-size: 14px;
+	font-style:italic;
+	margin: 0;
+ 	padding-top: 0;
+}
+
+/*
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Всплывающее окно
+*/
+
+/*
+Блок, хранящий текстовое содержимое всплывающего окна
+*/
+.popUpBlock{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+/*
+Основной текст из всплывающего окна
+*/
+.popUpText{
+	align-items: center;
+	text-align: center;
+}
+
+/*
+Кнопка из всплывающего окна
+*/
+.popUpButton{
+	border: 1px solid black;
+	border-radius: 5px;
+	width: 150px;
+	height: 50px;
+}
+
+
+
+/*
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Секция с таблицей, на которой находятся карточки блюд
+*/
+
+/*
+Секция с таблицей, на которой отображены все карточки с блюдами
+*/
+.tableWithDishes{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/*
+Блок, появляющийся на месте таблицы с карточками блюд, если не выбрано ни одно блюдо
+*/
+.goToZakazMaked{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+/*
+Ссылка на страницу создания заказа
+*/
+.goToZakazMaked a{
+	color: lightcoral;
+	text-decoration: underline;
+}
+
+/*
+Изменение цвета ссылки на страницу создания заказа при наведении на неё курсора
+*/
+
+.goToZakazMaked a:hover{
+	color: tomato;
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Doba{
+	verticle-align: center;
+	text-align: center;
+}
+
+.td-no-border{
+	border: none;
+}
+
+/*Grid Контейнер*/
+.container{ 
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: 1fr;
+	gap: 10px;
+	justify-items: stretch;
+  align-items: stretch;
+}
+
+.container p{
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin: 10px;
+}
+/*
+.image {
+	height: 70%;
+}
+*/
+.white{
+	color: white;
+}
+/*
+.image1 {
+	height: 70%;
+}
+*/
+.grey{
+	color: grey;
+}
+
+.price{
+	font-size: 24px;
+}
+
+/*Названия блюд*/
+.foodname{
+	line-height: 1em;
+	min-height: 2em;
+	font-size: 24px;
+}
+
+/*
+Ячейка с инфой о блюде в блоке с блюдами
+*/
+.item1 {  
+	box-sizing: border-box; /*Включает padding и margin в ширину и высоту элемента*/
+	width: 100%;
+	display:flex;
+	flex-direction: column;
+  border: 1px solid black;
+  background-color: white;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+	filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+  cursor: pointer;
+  border-radius: 35px;
+  justify-content: flex-start;
+}
+
+.item1:hover {
+  border-color: tomato; /* цвет границы при наведении */
+  border: 2 px solid tomato;
+
+}
+
+.item1:hover .button{
+	background: darkgrey;
+}
+
+.bottom{
+	padding-bottom: 20px;
+}
+
+
+
+
+/*
+Контейнер Grid - вся форма заказа
+*/
+.cont-Zakaz{
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(2, 1fr);
+	grid-auto-rows: 1fr;
+	gap: 10px;
+	justify-items: center;
+  align-items: stretch;
+
+/*
+Колонка полей с выбором еды
+*/
+}
+.leftChoice{
+	deploy: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	
+}
+
+/*Колонка полей с указанием данных клиента*/
+.rightChoice{
+	deploy: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+/*Заголовок столбца формы заказа*/
+.zagolovok-konec{
+
+}
+
+/*Элемент формы заказа*/
+.element{
+	
+}
+
+.elementTextarea{
+
+}
+
+/*Первый компонент элемента, который принадлежит форме заказа*/
+.CHOICE1{
+	margin-top: 15px;
+}
+
+/*Поля, где нужно вводить текст*/
+.CHOICE-text{
+	width: 300px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.CHOICE-text2{
+	width: 300px;
+	padding-bottom: 10px;
+	padding-top: 20px;
+}
+
+
+.CHOICE4{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+
+/*
+input{
+	width: 300px;
+	padding: 10px;
+}
+*/
+select{
+	width: 300px;
+	padding: 10px;
+}
+
+/*компонент элемента, который принадлежит форме заказа*/
+.CHOICE{
+
+}
+
+/*Доп.текст-пояснение под элементом*/
+.italics{
+	font-style: italic;
+	font-size: 16px;
+}
+
+/*Блок с кнопками в конце формы*/
+.end-buttons{
+	margin-top: 10px;
+}
+
+/*Кнопки в конце формы*/
+.end-form{
+	border-radius: 0px;
+	background-color: white;
+}
+
+
+
+/*
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Изменения сайта при изменении окна браузера
+*/
+
+/*
+При ширине в 800 пикселей
+*/
+@media(max-width: 800px){
+	nav {
+		border: none;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.container{
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/*
+При ширине в 600 пикселей
+*/
+@media(max-width: 600px){
+	h1{
+		text-align: center;
+	}
+	nav{
+		flex-direction: column;
+		justify-content: center;
+		font-size: 24px;
+	}
+	h2{
+		text-align: center;
+	}
+	.container{
+		grid-template-columns: 1fr;
+	}
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="Oform.css" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<h1>Food Construct</h1>
+			<nav>
+				<a href="index.html">О нас</a>
+				<a href="Zakaz.html">Собрать ланч</a>
+				<a id="active" href="Oform.html">Оформить заказ</a>
+				<a href="">Заказы</a>
+				<a href="#contacts">Контакты</a>
+			</nav>
+		</header>
+		<main>
+			<h2 class="iconTitle">Состав заказа</h2>
+			<section class="tableWithDishes" id="tableWithDishes">
+				<div class="container" id="ChosenZakaz">
+
+				</div>
+			</section>
+			<section>
+				<h2>Сделать заказ</h2>
+				<form class="cont-Zakaz" id="orderForm" method="POST" enctype="https://httpbin.org/post">
+					<section class="leftChoice" id="leftChoice">
+						<h3 class="zagolovok-konec" id="zagolovokKonec">Ваш заказ</h3>
+
+					</section>
+					<section class="rightChoice" id="rightChoice">
+						<h3 class="zagolovok-konec">Ваши данные</h3>
+						<div class="element">
+							<div class="CHOICE1">
+								<label for="name">Имя</label>
+							</div>
+							<div class="CHOICE-text">
+								<input class="CHOICE-text" id="name" type="text" name="name" required>
+							</div>
+						</div>
+						<div class="element">
+							<div class="CHOICE1">
+								<label for="email">Email</label>
+							</div>
+							<div class="CHOICE-text">
+								<input class="CHOICE-text" id="email" type="email" name="email" required>
+							</div>
+						</div>
+						<div class="element">
+							<div class="CHOICE-check">
+								<input type="checkbox" name="checkEmail" id = "checkEmail" checked>
+								<label>Получать информацию о скидках и акциях</label>
+							</div>
+						</div>
+						<div class="element">
+							<div class="CHOICE1">
+								<label for="number">Номер телефона</label>
+							</div>
+							<div class="CHOICE-text">
+								<input class="CHOICE-text" id="number" type="tel" name="number" required>
+							</div>
+						</div>
+						<div class="element">
+							<div class="CHOICE1">
+								<label for="Address">Адрес доставки</label>
+							</div>
+							<div class="CHOICE-text">
+								<input class="CHOICE-text" id="Address" type="text" name="Address" required>
+							</div>
+							<div class="CHOICE">
+								<label for="Address" class="italics">Доставка осуществляется только по Москве</label>
+							</div>
+						</div>
+						<div class="element">
+							<div class="CHOICE1">
+								<p>Время доставки:<p>
+							</div>
+							<div class="CHOICE-check">
+								<input type="radio" name="deliveryType" id="faster" value="now">
+								<label for="faster">Как можно скорее</label>
+							</div>
+							<div class="CHOICE-check">
+								<input type="radio" name="deliveryType" id="toTheTime" value="by_time">
+								<label for="toTheTime">К указанному времени</label>
+							</div>
+						</div>
+						<div class="element">
+							<div class="CHOICE-text2">
+								<label for="time2">Укажите время доставки</label>
+							</div>
+							<div class="CHOICE">
+								<input class="CHOICE-text" type="time" name="time2" min="07:00" max="23:00" step="300" value="07:00" id="time2">
+							</div>
+							<div class="CHOICE">
+								<label for="time2" class="italics">Доступное время доставки с 07:00 до 23:00</label>
+							</div>
+						</div>
+						<div class="element">
+							<div class="end-buttons">
+								<button class="end-form" id="resetButton" type="reset" onclick="onClickReset(this)">Сбросить</button>
+								<button 
+									type="button"
+        							class="end-form"
+									id = "sendButton"
+									onclick="onClickSend(this)">
+  									Отправить
+								</button>
+							</div>
+						</div>
+					</section>
+				</form>
+			</section>
+			<section id="modules">
+
+			</section>
+		</main>
+		<footer id="contacts">
+			<p>Позвонить нам +7-000-000-00-00</p>
+		</footer>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="Oform.js" type="module"></script>
+	</body>
+</html>
+
+
