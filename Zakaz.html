@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="Zakaz.css" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<h1>Food Construct</h1>
+			<nav>
+				<a href="index.html">О нас</a>
+				<a id="active" href="Zakaz.html">Собрать ланч</a>
+				<a href="Oform.html">Оформить заказ</a>
+				<a href="Offers.html">Заказы</a>
+				<a href="company.html">О компании</a>
+			</nav>
+		</header>
+		<main>
+			<h2 class="iconTitle">Доступные для заказа блюда</h2>
+			<section class="iconBlock">
+				<div class="iconRow">
+					<div class="iconElement">
+						<img class="iconDishImage" src="Images/icons/soup.png">
+						<p class="iconDishText">Суп</p>
+					</div>
+					<div class="iconElement">
+						<img class="iconDishImage" src="Images/icons/main.png">
+						<p class="iconDishText">Главное блюдо</p>
+					</div>
+					<div class="iconElement">
+						<img class="iconDishImage" src="Images/icons/salad.png">
+						<p class="iconDishText">Салат</p>
+					</div>
+					<div class="iconElement">
+						<img class="iconDishImage" src="Images/icons/drink.png">
+						<p class="iconDishText">Напиток</p>
+					</div>
+				</div>
+				<div class="iconRow">
+					<div class="iconElement">
+						<img class="iconDishImage" src="Images/icons/soup.png">
+						<p class="iconDishText">Суп</p>
+					</div>
+					<div class="iconElement">
+						<img class="iconDishImage" src="Images/icons/main.png">
+						<p class="iconDishText">Главное блюдо</p>
+					</div>
+					<div class="iconElement">
+						<img class="iconDishImage" src="Images/icons/drink.png">
+						<p class="iconDishText">Напиток</p>
+					</div>
+				</div>
+				<div class="iconRow">
+					<div class="iconElement">
+						<img class="iconDishImage" src="Images/icons/soup.png">
+						<p class="iconDishText">Суп</p>
+					</div>
+					<div class="iconElement">
+						<img class="iconDishImage" src="Images/icons/salad.png">
+						<p class="iconDishText">Салат</p>
+					</div>
+					<div class="iconElement">
+						<img class="iconDishImage" src="Images/icons/drink.png">
+						<p class="iconDishText">Напиток</p>
+					</div>
+				</div>
+				<div class="iconRow">
+					<div class="iconElement"> 
+						<img class="iconDishImage" src="Images/icons/main.png">
+						<p class="iconDishText">Главное блюдо</p>
+					</div>
+					<div class="iconElement">
+						<img class="iconDishImage" src="Images/icons/salad.png">
+						<p class="iconDishText">Салат</p>
+					</div>
+					<div class="iconElement">
+						<img class="iconDishImage" src="Images/icons/drink.png">
+						<p class="iconDishText">Напиток</p>
+					</div>
+				</div>
+				<div class="iconRow">
+					<div class="iconElement">
+						<img class="iconDishImage" src="Images/icons/main.png">
+						<p class="iconDishText">Главное блюдо</p>
+					</div>
+					<div class="iconElement">
+						<img class="iconDishImage" src="Images/icons/drink.png">
+						<p class="iconDishText">Напиток</p>
+					</div>
+				</div>
+				<div class="iconRow">
+					<div class="iconElement">
+						<img class="iconDishImage" src="Images/icons/desert.png">
+						<p class="iconDishText">Десерт</p>
+						<p class="hint">(Можно добавить к любому заказу)</p>
+					</div>
+				</div>
+			</section>
+			<section class="sectionTableDish">
+				<h2 class="titleH2">Выберите суп</h2>
+				<div class="filter">
+					<button class="objectfilter" data-category="soup" data-kind="fish" onclick="onClickSort(this)">Рыбный</button>
+					<button class="objectfilter" data-category="soup" data-kind="meat" onclick="onClickSort(this)">Мясной</button>
+					<button class="objectfilter" data-category="soup" data-kind="veg" onclick="onClickSort(this)">Вегетарианский</button>
+				</div>
+				<div class="container" id="tableSoup" data-category="soup">
+
+				</div>
+			</section>
+			<section class="sectionTableDish">
+				<h2 class="titleH2" id>Выберите главное блюдо</h2>
+				<div class="filter">
+					<button class="objectfilter" data-category="mainDish" data-kind="fish" onclick="onClickSort(this)">Рыбный</button>
+					<button class="objectfilter" data-category="mainDish" data-kind="meat" onclick="onClickSort(this)">Мясной</button>
+					<button class="objectfilter" data-category="mainDish" data-kind="veg" onclick="onClickSort(this)">Вегетарианский</button>
+				</div>
+				<div class="container" id="tableDish" data-category="mainDish">
+					
+				</div>
+			</section>
+			<section class="sectionTableDish">
+				<h2 class="titleH2">Выберите салат или стартер</h2>
+				<div class="filter">
+					<button class="objectfilter" data-category="salad" data-kind="fish" onclick="onClickSort(this)">Рыбный</button>
+					<button class="objectfilter" data-category="salad" data-kind="meat" onclick="onClickSort(this)">Мясной</button>
+					<button class="objectfilter" data-category="salad" data-kind="veg" onclick="onClickSort(this)">Вегетарианский</button>
+				</div>
+				<div class="container" id="tableSalad" data-category="salad">
+					
+				</div>
+			</section>
+			<section class="sectionTableDish">
+				<h2 class="titleH2">Выберите напиток</h2>
+				<div class="filter">
+					<button class="objectfilter" data-category="juice" data-kind="cold" onclick="onClickSort(this)">Холодный</button>
+					<button class="objectfilter" data-category="juice" data-kind="hot" onclick="onClickSort(this)">Горячий</button>
+				</div>
+				<div class="container" id="tableJuice" data-category="juice">
+					
+				</div>
+			</section>
+			<section class="sectionTableDish">
+				<h2 class="titleH2">Выберите десерт</h2>
+				<div class="filter">
+					<button class="objectfilter" data-category="dessert" data-kind="small" onclick="onClickSort(this)">Маленькая порция</button>
+					<button class="objectfilter" data-category="dessert" data-kind="middle" onclick="onClickSort(this)">Средняя порция</button>
+					<button class="objectfilter" data-category="dessert" data-kind="big" onclick="onClickSort(this)">Большая порция</button>
+				</div>
+				<div class="container" id="tableDessert" data-category="dessert">
+					
+				</div>
+			</section>
+			<div class="sticky" id="Sticky">
+
+			</div>
+			<section id="modules">
+
+			</section>
+		</main>
+		<footer id="contacts">
+			<p>Позвонить нам +7-000-000-00-00</p>
+		</footer>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="sorting.js" type="module"></script>
+	</body>
+</html>
+

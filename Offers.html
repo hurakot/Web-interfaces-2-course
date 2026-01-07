@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="Offers.css" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<h1>Food Construct</h1>
+			<nav>
+				<a href="index.html">О нас</a>
+				<a href="Zakaz.html">Собрать ланч</a>
+				<a href="Oform.html">Оформить заказ</a>
+				<a id="active" href="Offers.html">Заказы</a>
+				<a href="company.html">О компании</a>
+			</nav>
+		</header>
+		<main>
+			<h2 class="iconTitle">Все заказы</h2>
+			<table class="orders-table">
+  				<thead>
+    				<tr>
+      					<th>№</th>
+      					<th>Дата оформления</th>
+      					<th>Состав заказа</th>
+      					<th>Стоимость</th>
+      					<th>Время доставки</th>
+      					<th>Действия</th>
+    				</tr>
+  				</thead>
+
+  				<tbody id ="tableWithOrders">
+    				
+  				</tbody>
+			</table>
+<!-- ===== Просмотр заказа ===== -->
+			<div class="modal" id="viewModal">
+    			<div class="modal-content">
+        			<div class="modal-header">
+            			<h3>Просмотр заказа</h3>
+            			<span class="close" onclick="closeModal('viewModal')">&times;</span>
+        			</div>
+
+        			<div class="modal-body">
+						<div class="modalRow">
+							<p class="modalRowLeft"><b>Дата оформления:</b></p>
+							<p class="modalRowRight">23.11.2024 20:01</p>
+						</div>
+						<h4>Доставка</h4>
+
+						<div class="modalRow">
+							<p class="modalRowLeft">Имя получателя:</p>
+							<p class="modalRowRight">Иванов Иван Иванович</p>
+						</div>
+						<div class="modalRow">
+							<p class="modalRowLeft">Адрес доставки:</p>
+							<p class="modalRowRight">г. Москва, ул. Большая Семёновская, 38</p>
+						</div>
+						<div class="modalRow">
+							<p class="modalRowLeft">Время доставки:</p>
+							<p class="modalRowRight">21:00</p>
+						</div>
+						<div class="modalRow">
+							<p class="modalRowLeft">Телефон:</p>
+							<p class="modalRowRight">+74952230523</p>
+						</div>
+						<div class="modalRow">
+							<p class="modalRowLeft">Email:</p>
+							<p class="modalRowRight">example@mospolytech.ru</p>
+						</div>
+
+						<h4>Комментарий</h4>
+
+						<div class="modalRow">
+							<p class="modalRowLeft">Позвонить от поста охраны.</p>
+						</div>
+
+						<h4>Состав заказа</h4>
+
+						<div class="modalRow">
+							<p class="modalRowLeft">Основное блюдо:</p>
+							<p class="modalRowRight">Жареная картошка с грибами (150₽)</p>
+						</div>
+						<div class="modalRow">
+							<p class="modalRowLeft">Напиток:</p>
+							<p class="modalRowRight">Зелёный чай (100₽)</p>
+						</div>
+							
+						<div class="modalRow">
+							<p class="modalRowLeft">Десерт:</p>
+							<p class="modalRowRight">Чизкейк (240₽)</p>
+						</div>
+
+						<div class="modalRow">
+							<p class="total">Стоимость: 490₽</p>
+						</div>
+        			</div>
+					<div class="modal-footer">
+            			<button class="commonButton" onclick="closeModal('viewModal', this)">OK</button>
+        			</div>
+    			</div>
+			</div>
+
+			<!-- ===== Редактирование заказа ===== -->
+
+			<div class="modal" id="editModal">
+    			<div class="modal-content">
+        			<div class="modal-header">
+            			<h3>Редактирование заказа</h3>
+            			<span class="close" onclick="closeModal('editModal')">&times;</span>
+        			</div>
+        			<div class="modal-body">
+						<div class="modalRow">
+							<p class="modalRowLeft"><b>Дата оформления:</b></p>
+							<p class="modalRowRight">23.11.2024 20:01</p>
+						</div>
+						<h4>Доставка</h4>
+						<div class="modalRow">
+            				<label class="modalRowLeftChange">Имя получателя</label>
+            				<input class="modalRowRight" type="text" value="Иванов Иван Иванович">
+						</div>
+						<div class="modalRow">
+            				<label class="modalRowLeftChange">Адрес доставки</label>
+            				<input class="modalRowRight" type="text" value="г. Москва, ул. Большая Семёновская, 38">
+						</div>
+						<div class="modalRow">
+            				<label class="modalRowLeftChange">Время доставки</label>
+            				<input class="modalRowRight" type="time" value="21:00">
+						</div>
+						<div class="modalRow">
+            				<label class="modalRowLeftChange">Телефон</label>
+            				<input class="modalRowRight" type="tel" value="+74952230523">
+						</div>
+						<div class="modalRow">
+            				<label class="modalRowLeftChange">Email</label>
+            				<input class="modalRowRight" type="email" value="example@mospolytech.ru">
+						</div>
+						<h4>Комментарий</h4>
+						<div class="modalRowComment">
+							<input class="modalRowLeftChange" type="email" value="Позвонить от поста охраны.">
+						</div>
+						<h4>Состав заказа</h4>
+						<div class="modalRow">
+							<p class="modalRowLeft">Основное блюдо:</p>
+							<p class="modalRowRight">Жареная картошка с грибами (150₽)</p>
+						</div>
+						<div class="modalRow">
+							<p class="modalRowLeft">Напиток:</p>
+							<p class="modalRowRight">Зелёный чай (100₽)</p>
+						</div>
+							
+						<div class="modalRow">
+							<p class="modalRowLeft">Десерт:</p>
+							<p class="modalRowRight">Чизкейк (240₽)</p>
+						</div>
+						<div class="modalRow">
+            				<p class="total">Стоимость: 490₽</p>
+						</div>
+        			</div>
+        			<div class="modal-footer">
+            			<button class="commonButton" onclick="closeModal('editModal')">Отмена</button>
+            			<button class="success" onclick="changeModal(this)">Сохранить</button>
+        			</div>
+    			</div>
+			</div>
+			<!-- ===== Удаление заказа ===== -->
+			<div class="modal" id="deleteModal">
+    			<div class="modal-content small">
+        			<div class="modal-header">
+            			<h3>Удаление заказа</h3>
+            			<span class="close" onclick="closeModal('deleteModal')">&times;</span>
+        			</div>
+
+        			<div class="modal-body">
+        			    <p class="modalRowLeftDeleteOrder">Вы уверены, что хотите удалить заказ?</p>
+        			</div>
+
+        			<div class="modal-footer">
+            			<button class="commonButton" onclick="closeModal('deleteModal')">Отмена</button>
+						<button class="danger" onclick="deleteModal()">Да</button>
+        			</div>
+    			</div>
+			</div>
+		</main>
+		<footer id="contacts">
+			<p>Позвонить нам +7-000-000-00-00</p>
+		</footer>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="Offers.js" type="module"></script>
+	</body>
+</html>
+
+

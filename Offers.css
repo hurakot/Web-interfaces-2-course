@@ -1,0 +1,568 @@
+body {
+	font-size: 20px;
+	color: black;
+	font-family: "Ariel", sans-serif;
+}
+
+
+header, main {
+	padding-left: 30px;
+}
+
+
+a{
+	color: black;
+	text-decoration: none;
+}
+
+a:hover{
+	color: tomato;
+}
+
+img {
+	border-radius: 35px;
+	width: 100%;
+	height: auto;
+	border: 1px solid black;
+	object-fit: cover;
+  	display: block;
+}
+
+nav{
+	border: none;
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 15px;
+}
+
+footer{
+	padding: 30px;
+	background-color: black;
+	color: white;
+	padding-left: 50px;
+	margin-top: 30px;
+}
+
+select{
+	width: 300px;
+	padding: 10px;
+}
+
+textarea{
+	font-family: "Ariel", sans-serif;
+	font-size: 14px;
+}
+
+#active {
+	color: tomato;
+}
+
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+.orders-table thead th {
+  text-align: left;
+  font-weight: 600;
+  padding: 16px;
+  border-bottom: 2px solid #e0e0e0;
+  color: #000;
+}
+
+.orders-table tbody td {
+  padding: 20px 16px;
+  vertical-align: top;
+  border-bottom: 1px solid #e0e0e0;
+  line-height: 1.4;
+}
+
+.orders-table tbody tr:hover {
+  background-color: #fafafa;
+}
+
+.price {
+  white-space: nowrap;
+}
+
+.actions {
+  font-size: 18px;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: white;
+  border: 0px solid white;
+}
+
+.actionButton{
+  background-color: white;
+  border: 0px solid white;
+}
+
+.actions span {
+  margin-right: 10px;
+}
+
+.actions span:hover {
+  opacity: 0.7;
+}
+
+.muted {
+  color: #777;
+  font-size: 14px;
+}
+
+/*
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Всплывающее окно
+*/
+
+/*
+Блок, хранящий текстовое содержимое всплывающего окна
+*/
+.popUpBlock{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+/*
+Основной текст из всплывающего окна
+*/
+.popUpText{
+	align-items: center;
+	text-align: center;
+}
+
+/*
+Кнопка из всплывающего окна
+*/
+.popUpButton{
+	border: 1px solid black;
+	border-radius: 5px;
+	width: 150px;
+	height: 50px;
+}
+
+/*
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Модальные окна
+*/
+
+
+.actions button {
+    margin: 10px;
+    padding: 10px 20px;
+}
+
+/* overlay */
+
+.modal {
+    
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1000;
+
+	display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    border-radius: 12px;
+    width: 920px;
+    max-width: 90%;
+    max-height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content.small {
+    width: 400px;
+}
+/*
+Основная инфа в модальном окне
+*/
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+	padding-left: 30px;
+}
+
+.close {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 15px 0;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/*
+.modal-body {
+	display: block;
+    padding: 15px 0;
+}
+*/
+.modalRow {
+    display: grid;
+    grid-template-columns: 1.2fr 1.8fr;
+	grid-auto-rows: 1fr;
+    gap: 20px;
+    width: 100%;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.modalRowComment{
+	display: grid;
+    grid-template-columns: repeat(1, 1fr);
+	grid-auto-rows: 1fr;
+    gap: 20px;
+    width: 100%;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.modalRowRight {
+    text-align: left;
+    white-space: nowrap;
+	width: 100%
+}
+
+.modalRowLeft {
+    text-align: left;
+	width: 100%
+}
+
+.modalRowLeftChange {
+	display: flex;
+	align-items: center;
+    text-align: left;
+	width: 100%
+}
+
+.modal-body h4 {
+    margin-top: 15px;
+	padding-left: 30px;
+}
+
+.modal-body input,
+.modal-body textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.modal-footer {
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/*
+Кнопка "Сохранить" в окне редактирования заказа
+*/
+button.success {
+    background: #2e9c44;
+    color: #fff;
+	border-radius: 10px;
+	width: 125px;
+}
+
+/*
+Кнопка "Удалить" в окне удаления заказа
+*/
+button.danger {
+    background: #a5281c;
+    color: #fff;
+	border-radius: 10px;
+	width: 125px;
+}
+
+/*
+Обычные кнопки "Ок" в окне просмотра заказа и "Отмена" в окнах редактирования и удаление заказа
+*/
+.commonButton {
+	background: #cecaca;
+	border-radius: 10px;
+	width: 125px;
+}
+
+
+.total {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.modalRowLeftDeleteOrder{
+	padding-left: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Doba{
+	verticle-align: center;
+	text-align: center;
+}
+
+.td-no-border{
+	border: none;
+}
+
+/*Grid Контейнер*/
+.container{ 
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: 1fr;
+	gap: 10px;
+	justify-items: stretch;
+  align-items: stretch;
+}
+
+.container p{
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin: 10px;
+}
+/*
+.image {
+	height: 70%;
+}
+*/
+.white{
+	color: white;
+}
+/*
+.image1 {
+	height: 70%;
+}
+*/
+.grey{
+	color: grey;
+}
+
+.price{
+	font-size: 24px;
+}
+
+/*Названия блюд*/
+.foodname{
+	line-height: 1em;
+	min-height: 2em;
+	font-size: 24px;
+}
+
+/*
+Ячейка с инфой о блюде в блоке с блюдами
+*/
+.item1 {  
+	box-sizing: border-box; /*Включает padding и margin в ширину и высоту элемента*/
+	width: 100%;
+	display:flex;
+	flex-direction: column;
+  border: 1px solid black;
+  background-color: white;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+	filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+  cursor: pointer;
+  border-radius: 35px;
+  justify-content: flex-start;
+}
+
+.item1:hover {
+  border-color: tomato; /* цвет границы при наведении */
+  border: 2 px solid tomato;
+
+}
+
+.item1:hover .button{
+	background: darkgrey;
+}
+
+.bottom{
+	padding-bottom: 20px;
+}
+
+
+
+
+/*
+Контейнер Grid - вся форма заказа
+*/
+.cont-Zakaz{
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(2, 1fr);
+	grid-auto-rows: 1fr;
+	gap: 10px;
+	justify-items: center;
+  align-items: stretch;
+
+/*
+Колонка полей с выбором еды
+*/
+}
+.leftChoice{
+	deploy: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	
+}
+
+/*Колонка полей с указанием данных клиента*/
+.rightChoice{
+	deploy: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+/*Заголовок столбца формы заказа*/
+.zagolovok-konec{
+
+}
+
+/*Элемент формы заказа*/
+.element{
+	
+}
+
+.elementTextarea{
+
+}
+
+/*Первый компонент элемента, который принадлежит форме заказа*/
+.CHOICE1{
+	margin-top: 15px;
+}
+
+/*Поля, где нужно вводить текст*/
+.CHOICE-text{
+	width: 300px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.CHOICE-text2{
+	width: 300px;
+	padding-bottom: 10px;
+	padding-top: 20px;
+}
+
+
+.CHOICE4{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+
+/*
+input{
+	width: 300px;
+	padding: 10px;
+}
+*/
+select{
+	width: 300px;
+	padding: 10px;
+}
+
+/*компонент элемента, который принадлежит форме заказа*/
+.CHOICE{
+
+}
+
+/*Доп.текст-пояснение под элементом*/
+.italics{
+	font-style: italic;
+	font-size: 16px;
+}
+
+/*Блок с кнопками в конце формы*/
+.end-buttons{
+	margin-top: 10px;
+}
+
+/*Кнопки в конце формы*/
+.end-form{
+	border-radius: 0px;
+	background-color: white;
+}
+
+
+
+/*
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Изменения сайта при изменении окна браузера
+*/
+
+/*
+При ширине в 800 пикселей
+*/
+@media(max-width: 800px){
+	nav {
+		border: none;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.container{
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/*
+При ширине в 600 пикселей
+*/
+@media(max-width: 600px){
+	h1{
+		text-align: center;
+	}
+	nav{
+		flex-direction: column;
+		justify-content: center;
+		font-size: 24px;
+	}
+	h2{
+		text-align: center;
+	}
+	.container{
+		grid-template-columns: 1fr;
+	}
+}
